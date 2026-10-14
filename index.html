@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flood Safe Roads - Chennai</title>
+  <!-- Leaflet: the free library that draws the map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    body { margin: 0; }
+    #map { height: 100vh; }  /* make the map fill the whole screen */
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script>
+    // 1. Create the map and point it at Chennai (latitude, longitude), zoom level 11
+    const map = L.map('map').setView([13.0827, 80.2707], 11);
+
+    // 2. Load the actual map pictures from OpenStreetMap
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // 3. A few example flood spots (sample data for now, we replace it with real data in Part 2)
+    const floodSpots = [
+      { name: "Velachery", lat: 12.9815, lng: 80.2180 },
+      { name: "Pallikaranai", lat: 12.9340, lng: 80.2150 },
+      { name: "Mudichur", lat: 12.9000, lng: 80.0700 }
+    ];
+
+    // 4. Draw a red circle on each flood spot
+    floodSpots.forEach(spot => {
+      L.circle([spot.lat, spot.lng], {
+        color: 'red', fillColor: 'red', fillOpacity: 0.4, radius: 1200
+      }).addTo(map).bindPopup("Flood-affected: " + spot.name);
+    });
+  </script>
+</body>
+</html>
