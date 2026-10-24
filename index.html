@@ -22,19 +22,32 @@
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // 3. A few example flood spots (sample data for now, we replace it with real data in Part 2)
-    const floodSpots = [
-      { name: "Velachery", lat: 12.9815, lng: 80.2180 },
-      { name: "Pallikaranai", lat: 12.9340, lng: 80.2150 },
-      { name: "Mudichur", lat: 12.9000, lng: 80.0700 }
-    ];
+    // 3. Colors for each severity level
+    const colors = { severe: 'red', waterlogged: 'orange' };
 
-    // 4. Draw a red circle on each flood spot
-    floodSpots.forEach(spot => {
-      L.circle([spot.lat, spot.lng], {
-        color: 'red', fillColor: 'red', fillOpacity: 0.4, radius: 1200
-      }).addTo(map).bindPopup("Flood-affected: " + spot.name);
+    // 4. Load the flood data file, then draw it on the map
+    fetch('data/flood-2023.geojson')
+    .then(response => response.json())
+    .then(data => {
+      L.geoJSON(data, {
+        // Draw each point as a fixed-size circle marker, colored by severity
+        pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
+          radius: 10,
+          color: colors[feature.properties.severity],
+          fillColor: colors[feature.properties.severity],
+          fillOpacity: 0.6
+        }),
+        // Add a popup with the details when someone clicks a marker
+        onEachFeature: (feature, layer) => {
+          const p = feature.properties;
+          layer.bindPopup(
+            "<b>" + p.name + "</b> (" + p.severity + ")<br>" +
+            p.note + "<br><small>Source: " + p.source + "</small>"
+          );
+        }
+      }).addTo(map);
     });
+    
   </script>
 </body>
 </html>

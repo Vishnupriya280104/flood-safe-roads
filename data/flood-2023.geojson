@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Velachery", "severity": "severe",
+        "note": "Several areas marooned", "source": "Deccan Herald, 4 Dec 2023" },
+      "geometry": { "type": "Point", "coordinates": [80.2206, 12.9770] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Pallikaranai", "severity": "severe",
+        "note": "Cars floating in apartment parking; knee-deep water inside a high-rise", "source": "Deccan Herald, 4 Dec 2023" },
+      "geometry": { "type": "Point", "coordinates": [80.2079, 12.9302] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Mudichur", "severity": "severe",
+        "note": "Residents rescued by boat", "source": "Deccan Herald, 5 Dec 2023" },
+      "geometry": { "type": "Point", "coordinates": [80.0703, 12.9143] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Perungalathur", "severity": "severe",
+        "note": "Residents rescued by boat", "source": "Deccan Herald, 5 Dec 2023" },
+      "geometry": { "type": "Point", "coordinates": [80.0884, 12.9144] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Varadharajapuram", "severity": "severe",
+        "note": "Residents rescued by boat", "source": "Deccan Herald, 4 Dec 2023" },
+      "geometry": { "type": "Point", "coordinates": [80.0677, 12.9050] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Tambaram", "severity": "waterlogged",
+        "note": "Inundation reported; people moving to safer zones", "source": "PTI via Deccan Herald, 6 Dec 2023" },
+      "geometry": { "type": "Point", "coordinates": [80.1143, 12.9231] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Vadapalani", "severity": "waterlogged",
+        "note": "Waterlogging seen on roads", "source": "ANI via DailyO, 4 Dec 2023" },
+      "geometry": { "type": "Point", "coordinates": [80.2109, 13.0501] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Arumbakkam", "severity": "waterlogged",
+        "note": "Waterlogging seen on roads", "source": "ANI via DailyO, 4 Dec 2023" },
+      "geometry": { "type": "Point", "coordinates": [80.2077, 13.0740 ] }
+    }
+  ]
+}

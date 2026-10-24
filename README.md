@@ -10,6 +10,7 @@
 
 ## Progress
 - [x] Part 1: Map of Chennai with sample flood spots
-- [ ] Part 2: Real 2023 flood data on the map
+- [x] Part 2: 2023 flood localities on the map
+**Data note:** Flood locations are taken from news reports of the December 2023 Cyclone Michaung floods (Deccan Herald, PTI, ANI). Each marker shows a locality with a severity level and a source. It is not measured flood extent or water depth.
 - [ ] Part 3: Safe routing that avoids flooded roads
 - [ ] Part 4: Polish, screenshots, live demo link
